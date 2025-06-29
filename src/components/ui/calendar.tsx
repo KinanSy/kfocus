@@ -1,17 +1,35 @@
+import { useEffect, useState } from "react";
 import { Calendar as CalendarInstance } from "react-native-calendars"
 
 type CalendarProps = {
-    onDayPress? : () => void
+    onDaySelect?: (date: string) => void,
 }
 
 export default function Calendar({
-    onDayPress
+    onDaySelect,
+    ...props
 }
-: CalendarProps) {
+    : CalendarProps) {
 
+    const [selectedDate, setSelectedDate] = useState<string>();
+
+    useEffect(() => {
+        onDaySelect && onDaySelect(selectedDate);
+    }, [selectedDate])
+
+    const handleDayPress = (day) => {
+        const dayDate = day.dateString;
+        setSelectedDate(dayDate);
+    }
     return (
         <CalendarInstance
-            onDayPress={onDayPress}
+            onDayPress={handleDayPress}
+            markedDates={
+                selectedDate
+                    ? { [selectedDate]: { selected: true } }
+                    : {}
+            }
+            {...props}
         />
 
     )

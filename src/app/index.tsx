@@ -15,7 +15,7 @@ export default function Page() {
   ];
 
   return (
-    <View className="">
+    <View className="p-4">
       <Section>
         <H1>Good Afternoon, Kinan</H1>
         <MutedText className="text-gray-600">Today, 28 June</MutedText>
