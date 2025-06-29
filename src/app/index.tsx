@@ -1,4 +1,5 @@
 import AddTaskSection from "@/components/addTaskSection";
+import PageLayout from "@/components/ui/page";
 import Section from "@/components/ui/section";
 import Timeline from "@/components/ui/timeline";
 import MutedText, { H1, H3 } from "@/components/ui/typography";
@@ -15,7 +16,7 @@ export default function Page() {
   ];
 
   return (
-    <View className="p-4">
+    <PageLayout>
       <Section>
         <H1>Good Afternoon, Kinan</H1>
         <MutedText className="text-gray-600">Today, 28 June</MutedText>
@@ -29,7 +30,7 @@ export default function Page() {
           <Timeline activities={activities} />
         }
       </Section>
-    </View>
+    </PageLayout>
   );
 }
 

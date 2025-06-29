@@ -14,14 +14,11 @@ export default function Layout() {
         <BottomSheetModalProvider>
           <View className="flex-1 bg-gray-50">
             <AppHeader />
-
-            {/* Scrollable Page Content */}
             <ScrollView
-              className="pt-20 pb-24"
+              contentContainerStyle={{ paddingTop: 64, paddingBottom: 64, flexGrow: 1 }}
             >
               <Slot />
             </ScrollView>
-
             <AppFooter />
           </View>
         </BottomSheetModalProvider>

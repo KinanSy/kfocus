@@ -8,6 +8,7 @@ import Task from "@/types/task";
 import AssignTaskSheet, { AssignTaskSheetRef } from "@/components/assignTaskSheet";
 import { useEffect, useRef } from "react";
 import { View } from "react-native";
+import PageLayout from "@/components/ui/page";
 
 
 export default function Page() {
@@ -46,7 +47,7 @@ export default function Page() {
             assignTaskSheetRef.current.open(taskId);
     };
     return (
-        <View className="flex-1 h-full p-4">
+        <PageLayout>
             <Section className="mt-0">
                 <H2 className="text-center mt-0">Backlog</H2>
                 <TasksList items={exampleItems} onLongPress={handleTaskLongPress}></TasksList>
@@ -54,7 +55,7 @@ export default function Page() {
             <Section className="mt-20">
                 <AddTaskSection />
             </Section>
-            <AssignTaskSheet ref={assignTaskSheetRef} onAssign={handleAssignDate}/>
-        </View>
+            <AssignTaskSheet ref={assignTaskSheetRef} onAssign={handleAssignDate} />
+        </PageLayout>
     )
 }

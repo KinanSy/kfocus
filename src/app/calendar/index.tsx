@@ -1,5 +1,6 @@
 import DayTasksList from "@/components/dayTasksList";
 import Calendar from "@/components/ui/calendar";
+import PageLayout from "@/components/ui/page";
 import Section from "@/components/ui/section";
 import { H2 } from "@/components/ui/typography";
 import DayTasks from "@/types/dayTasks";
@@ -92,7 +93,7 @@ export default function Page() {
                     label: "Household Errands",
                     description: "Groceries and laundry",
                     status: "completed",
-                },                {
+                }, {
                     id: "task-7",
                     icon: ClipboardListIcon,
                     label: "Weekly Planning",
@@ -112,7 +113,7 @@ export default function Page() {
                     label: "Household Errands",
                     description: "Groceries and laundry",
                     status: "completed",
-                },                {
+                }, {
                     id: "task-7",
                     icon: ClipboardListIcon,
                     label: "Weekly Planning",
@@ -135,13 +136,13 @@ export default function Page() {
                 },
             ],
         },
-        
+
     ];
 
     return (
-        <Section className="mt-5 px-4 pb-4">
+        <PageLayout>
             <Calendar></Calendar>
             <DayTasksList date="2025-06-29" tasksList={tasksByDay.find((e) => { return e.date == "2025-06-29" })} />
-        </Section>
+        </PageLayout>
     )
 }
