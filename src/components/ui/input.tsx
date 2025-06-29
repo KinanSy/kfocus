@@ -1,7 +1,7 @@
 import React from "react";
-import { TextInput } from "react-native";
+import { TextInput, TextInputProps } from "react-native";
 
-type CustomInputProps = {
+type CustomInputProps = TextInputProps & {
   value?: string;
   onChangeText?: (text: string) => void;
   placeholder?: string;
@@ -13,6 +13,7 @@ export default function Input({
   onChangeText,
   placeholder = "Type here...",
   className = "",
+  ...props
 }: CustomInputProps) {
   return (
     <TextInput
@@ -22,6 +23,7 @@ export default function Input({
       placeholderTextColor="#888"
       placeholderClassName="text-red-500"
       className={`border bg-white border-gray-300 rounded-lg p-4 font-semibold text-base ${className}`}
+      {...props}
     />
   );
 }

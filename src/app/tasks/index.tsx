@@ -9,6 +9,7 @@ import AssignTaskSheet, { AssignTaskSheetRef } from "@/components/assignTaskShee
 import { useEffect, useRef } from "react";
 import { View } from "react-native";
 import PageLayout from "@/components/ui/page";
+import LinkBtn from "@/components/ui/linkBtn";
 
 
 export default function Page() {
@@ -53,7 +54,7 @@ export default function Page() {
                 <TasksList items={exampleItems} onLongPress={handleTaskLongPress}></TasksList>
             </Section>
             <Section className="mt-20">
-                <AddTaskSection />
+                <LinkBtn label="Create Task" href="/tasks/create"></LinkBtn>
             </Section>
             <AssignTaskSheet ref={assignTaskSheetRef} onAssign={handleAssignDate} />
         </PageLayout>

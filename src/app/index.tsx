@@ -10,9 +10,9 @@ import { View } from "react-native";
 export default function Page() {
 
   const activities = [
-    { icon: HomeIcon, label: "Home task", description: "Clean the kitchen" },
-    { icon: CalendarIcon, label: "Meeting", description: "With the design team" },
-    { icon: SettingsIcon, label: "Setup", description: "Configure project settings" },
+    { icon: HomeIcon, label: "Home task", description: "Clean the kitchen", hour: 15, minute: 30, done: false},
+    { icon: CalendarIcon, label: "Meeting", description: "With the design team", hour: 15, minute: 30, done: true },
+    { icon: SettingsIcon, label: "Setup", description: "Configure project settings", hour: 15, minute: 30, done: true },
   ];
 
   return (
@@ -21,7 +21,6 @@ export default function Page() {
         <H1>Good Afternoon, Kinan</H1>
         <MutedText className="text-gray-600">Today, 28 June</MutedText>
       </Section>
-      <AddTaskSection />
       <Section>
         <H3 className="font-extrabold">Timeline</H3>
         {activities.length < 1 ?

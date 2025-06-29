@@ -39,7 +39,8 @@ export default function AppFooter() {
         <View className="absolute bottom-0 left-0 right-0 h-24 bg-white border-t border-gray-200 z-50 flex-row justify-around items-center px-4">
             {Links.map((link) => {
                 const Icon = link.icon;
-                const iconColor = link.url == currentPath ? activeLinkColor : inactiveLinkColor;
+                const isCurrentPath = currentPath == link.url ? true : link.url.slice(1) != "" && currentPath.slice(1).startsWith(link.url.slice(1)) 
+                const iconColor = isCurrentPath ? activeLinkColor : inactiveLinkColor;
                 return (
                     <IconBtn icon={Icon} key={link.url} onPress={() => router.push(link.url)} size={linkSize} color={iconColor}/>
                 )
