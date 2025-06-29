@@ -8,7 +8,7 @@ import AssignTaskSheet, { AssignTaskSheetRef } from "../assignTaskSheet";
 
 
 type TasksListProps = {
-    items: Task[];
+    items: Task[] | [];
     onLongPress? : (id: string) => void;
     editable?: boolean;
 }
@@ -18,7 +18,7 @@ export default function TasksList({ items,onLongPress, editable = false }: Tasks
 
     return (
         <Section className="gap-y-6">
-            {items.map((task, index) => {
+            {items && items.map((task, index) => {
                 const Icon = task.icon;
                 const taskAssignable = editable && task.status == "backlog"
 

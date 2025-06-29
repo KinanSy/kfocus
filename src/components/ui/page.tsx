@@ -4,7 +4,7 @@ import Section from "./section";
 export default function PageLayout({children} : {children: ReactNode}){
 
     return(
-        <Section className="mt-5 px-4 pb-10">
+        <Section className="flex-1 mt-5 px-4 pb-10">
             {children}
         </Section>
     )

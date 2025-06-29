@@ -12,8 +12,15 @@ import {
     HomeIcon,
     ClipboardListIcon,
 } from "lucide-react-native";
+import { useState } from "react";
 export default function Page() {
 
+    const [calendarDay, setCalendarDay] = useState<string>();
+
+    const handleDaySelect = (date : string) => {
+        setCalendarDay(date);
+        console.log(date);
+    }
     const tasksByDay: DayTasks[] = [
         {
             id: "day-1",
@@ -139,10 +146,18 @@ export default function Page() {
 
     ];
 
+    const buildMarkedDates = () => {
+        const markedDates = []
+        tasksByDay.map((e => {
+            markedDates.push(e.date)
+        }))
+        return markedDates
+    }
     return (
         <PageLayout>
-            <Calendar></Calendar>
-            <DayTasksList date="2025-06-29" tasksList={tasksByDay.find((e) => { return e.date == "2025-06-29" })} />
+            <Calendar onDaySelect={handleDaySelect} markedDates={buildMarkedDates()}></Calendar>
+            
+            {calendarDay && <DayTasksList date={calendarDay} tasksList={tasksByDay.find((e) => { return e.date == calendarDay }) ?? []} />}
         </PageLayout>
     )
 }
