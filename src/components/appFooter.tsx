@@ -36,7 +36,7 @@ export default function AppFooter() {
     const currentPath = usePathname();
 
     return (
-        <View className="absolute bottom-0 left-0 right-0 h-16 bg-white border-t border-gray-200 z-50 flex-row justify-around items-center">
+        <View className="absolute bottom-0 left-0 right-0 h-24 bg-white border-t border-gray-200 z-50 flex-row justify-around items-center px-4">
             {Links.map((link) => {
                 const Icon = link.icon;
                 const iconColor = link.url == currentPath ? activeLinkColor : inactiveLinkColor;

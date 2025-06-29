@@ -17,7 +17,7 @@ export default function Layout() {
 
             {/* Scrollable Page Content */}
             <ScrollView
-              contentContainerStyle={{ paddingTop: 64, paddingBottom: 64, flexGrow: 1 }}
+              className="pt-20 pb-24"
             >
               <Slot />
             </ScrollView>

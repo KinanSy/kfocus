@@ -92,13 +92,54 @@ export default function Page() {
                     label: "Household Errands",
                     description: "Groceries and laundry",
                     status: "completed",
+                },                {
+                    id: "task-7",
+                    icon: ClipboardListIcon,
+                    label: "Weekly Planning",
+                    description: "Plan next week's tasks",
+                    status: "planned",
+                },
+                {
+                    id: "task-8",
+                    icon: CalendarIcon,
+                    label: "Doctor Appointment",
+                    description: "Health check-up at 3 PM",
+                    status: "planned",
+                },
+                {
+                    id: "task-9",
+                    icon: HomeIcon,
+                    label: "Household Errands",
+                    description: "Groceries and laundry",
+                    status: "completed",
+                },                {
+                    id: "task-7",
+                    icon: ClipboardListIcon,
+                    label: "Weekly Planning",
+                    description: "Plan next week's tasks",
+                    status: "planned",
+                },
+                {
+                    id: "task-8",
+                    icon: CalendarIcon,
+                    label: "Doctor Appointment",
+                    description: "Health check-up at 3 PM",
+                    status: "planned",
+                },
+                {
+                    id: "task-9",
+                    icon: HomeIcon,
+                    label: "Household Errands",
+                    description: "Groceries and laundry",
+                    status: "completed",
                 },
             ],
         },
+        
     ];
 
     return (
-        <Section className="mt-0 p-4">
+        <Section className="mt-5 px-4 pb-4">
             <Calendar></Calendar>
             <DayTasksList date="2025-06-29" tasksList={tasksByDay.find((e) => { return e.date == "2025-06-29" })} />
         </Section>

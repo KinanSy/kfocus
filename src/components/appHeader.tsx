@@ -13,15 +13,18 @@ export default function AppHeader() {
         router.back()
     }
     return (
-        <View className="absolute top-0 left-0 right-0 h-16 bg-white border-b border-gray-200 z-50 flex-row items-center px-4">
-            <View className="w-12 items-center">
-                {!isHome && <IconBtn icon={ArrowLeftIcon} onPress={handleBackPress}/>}
+        <>
+            <View className="absolute top-0 left-0 right-0 h-24 bg-white border-b border-gray-200 z-50 px-4">
+                <View className="flex-row items-center h-full mt-2">
+                    <View className="w-12 items-center">
+                        {!isHome && <IconBtn icon={ArrowLeftIcon} onPress={handleBackPress} />}
+                    </View>
+                    <View className="flex-1 items-center justify-center">
+                        <Text className="text-2xl font-extrabold text-gray-800">KFocus</Text>
+                    </View>
+                    <View className="w-12" />
+                </View>
             </View>
-            <View className="flex-1 items-center justify-center">
-                <Text className="text-2xl font-semibold text-gray-800">KFocus</Text>
-            </View>
-            <View className="w-12" />
-        </View>
-
+        </>
     );
 }

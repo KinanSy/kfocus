@@ -23,7 +23,7 @@ export default function IconBtn({
   return (
     <TouchableOpacity
       onPress={onPress}
-      className={`${className}`}
+      className={`${className} p-2`}
     >
       <Icon size={size} className={`${iconClassName}`} color={color} />
     </TouchableOpacity>
